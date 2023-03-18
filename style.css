@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+    background: darkgreen;
+    padding: 3rem;
+}
+
+#add {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    background: crimson;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #0005;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.note {
+    background: #fff;
+    box-shadow: 0 5px 10px #0005;
+    height: 400px;
+    width: calc(100% / 3 - 1rem);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.note img {
+    height: 50px;
+    padding: 10px;
+    margin-right: auto;
+}
+
+.note .tools {
+    background: crimson;
+    display: flex;
+}
+
+.note .tools button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.note .tools button:hover {
+    background: darkred;
+}
+
+.note textarea {
+    border: 0;
+    width: 100%;
+    height: 350px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: inherit;
+    outline: none;
+    text-align: justify;
+    background: #ccc;
+    color: #000;
+}
+
+.note .main{
+    padding: 20px;
+    font-size: 20px;
+    width: 100%;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}

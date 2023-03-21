@@ -1,8 +1,19 @@
 const addButton = document.querySelector("#add");
 const notes = document.querySelector("#notes");
+const toggleDarkMode = document.querySelector("#toggleDarkMode")
 const storedNotes = JSON.parse(localStorage.getItem("notes"));
 
 addButton.addEventListener("click", () => createNewNote());
+toggleDarkMode.addEventListener("click", () => {
+    document.body.classList.toggle("DarkMode")
+    toggleDarkModeState()
+});
+
+const lightMode = JSON.parse(localStorage.getItem("mod"))
+
+if (lightMode[0]) {
+    document.body.classList = lightMode[0]
+}
 
 if (storedNotes) {
     storedNotes.forEach((note) => {
@@ -60,6 +71,10 @@ function createNewNote(noteContent = "") {
 function toggleNoteEditMode(main, textArea) {
     main.classList.toggle("hidden");
     textArea.classList.toggle("hidden");
+}
+
+function toggleDarkModeState() {
+    localStorage.setItem("mod", JSON.stringify(document.body.classList))
 }
 
 function saveNoteOnBlur(note, main, textArea) {
